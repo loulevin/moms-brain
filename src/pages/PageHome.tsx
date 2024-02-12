@@ -1,7 +1,7 @@
 export const PageHome = () => {
-    return (
-        <>
-            <p>Welcome to Moms Brain</p>
-        </>
-    )
-}
+  return (
+    <>
+      <p>Welcome to Moms Brain</p>
+    </>
+  );
+};
