@@ -1,18 +1,19 @@
 import { Outlet } from "react-router-dom";
 import { Header } from "./components/Header";
+import { ThemeProvider } from "./components/theme-provider";
 
-
-
-function App()  {
+function App() {
   return (
     <>
-      <Header />
-      <main>
-        <Outlet />
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
        
-      </main>
+        <Header />
+        <main>
+          <Outlet />
+        </main>
+      </ThemeProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
