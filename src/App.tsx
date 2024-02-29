@@ -10,7 +10,7 @@ function App() {
         <Header />
         <div className="flex ">
           <Nav />
-          <main className="p-3">
+          <main className="p-6">
             <Outlet />
           </main>
         </div>
