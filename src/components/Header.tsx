@@ -1,4 +1,4 @@
-import { Nav } from "./Nav";
+
 import { ModeToggle } from "./mode-toggle";
 
 export const Header = () => {
@@ -11,7 +11,7 @@ export const Header = () => {
         </div>
       </div>
 
-      <Nav />
+   
     </>
   );
 };

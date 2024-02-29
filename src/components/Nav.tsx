@@ -1,13 +1,14 @@
-import { NavLink } from "react-router-dom"
-
+import { NavLink } from "react-router-dom";
 
 export const Nav = () => {
-    return (
-        <nav className="p-3 flex flex-col">
-            <ul className="gap-3">
-                <NavLink to="/" >Home</NavLink>
-                <NavLink to="/calender" className="ml-3">Calender</NavLink>
-            </ul>
-        </nav>
-    )
-}
+  return (
+    <nav className="w-[10rem]">
+      <div className="flex flex-col gap-2 p-4 w-full md:w-auto h-dvh">
+        <NavLink to="/" className="[&.active]:text-gray-600">Home</NavLink>
+        <NavLink to="/calender" className="[&.active]:text-gray-600">
+          Calender
+        </NavLink>
+      </div>
+    </nav>
+  );
+};
