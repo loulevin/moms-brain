@@ -8,6 +8,7 @@ export const Nav = () => {
         <NavLink to="/calender" className="[&.active]:text-gray-600">
           Calender
         </NavLink>
+        <NavLink to="/tabs" className="[&.active]:text-gray-600">Tabs</NavLink>
       </div>
     </nav>
   );

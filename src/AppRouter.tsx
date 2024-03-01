@@ -3,6 +3,7 @@ import App from "./App";
 import { PageHome } from "./pages/PageHome";
 import { Page404 } from "./pages/Page404";
 import { PageCalender } from "./pages/PageCalender";
+import { PageTabs } from "./pages/PageTabs";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
         path: "/calender",
         element: <PageCalender />,
       },
+      {
+        path: "/tabs",
+        element: <PageTabs />,
+      }
     ],
   },
 ]);
