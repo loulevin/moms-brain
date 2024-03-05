@@ -5,18 +5,18 @@ import * as config from "../config";
 import { useState, useEffect } from "react";
 
 export const CalenderCard = () => {
-  const [appointments, setAppointments] = useState<ICalender[]>([]);
+const [appointments, setAppointments] = useState<ICalender[]>([]);
 
-  useEffect(() => {
+useEffect(() => {
     (async () => {
-      const response = await axios(`${config.backendUrl()}/api/calender`);
-      const _appoinments = response.data.map((appointment) => ({
-        ...appointment,
-        date: dayjs(appointment.date).format("DD-MM"),
-      }));
-      setAppointments(_appoinments);
+        const response = await axios(`${config.backendUrl()}/api/calender`);
+        const _appoinments = response.data.map((appointment: ICalender) => ({
+            ...appointment,
+            date: dayjs(appointment.date).format("DD-MM"),
+        }));
+        setAppointments(_appoinments);
     })();
-  }, []);
+}, []);
   return (
     <>
       <div className="grid grid-cols-5">
@@ -32,12 +32,12 @@ export const CalenderCard = () => {
                 displayDate ? "col-span-5" : "col-span-1"
               }`}
             >
-              {displayDate && (
+            {displayDate && (
                 <>
-                  <h3>{appointment.date}</h3>
-                  <h4>{appointment.dayOfWeek}</h4>
+                    <h3>{appointment.date.toString()}</h3>
+                    <h4>{appointment.dayOfWeek}</h4>
                 </>
-              )}
+            )}
 
               {appointment.appointments
                 .sort((a, b) => dayjs(a.startTime).diff(dayjs(b.startTime)))
