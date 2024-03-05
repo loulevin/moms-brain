@@ -22,7 +22,7 @@ export const PageCalender = () => {
     <>
       <h2>Calender</h2>
       <h2>there are {appointments.length} MongoDB appointments</h2>
-      <div className="grid grid-cols-3">
+      <div className="grid grid-cols-">
         {appointments.map((appointment, index) => {
           const uniqueDayKey = `${appointment.date}-${appointment.dayOfWeek}`;
           const displayDate =
@@ -31,7 +31,9 @@ export const PageCalender = () => {
           return (
             <div
               key={uniqueDayKey}
-              className={`gap-2 m-3 p-3 rounded-sm bg-gray-600 ${displayDate ? "col-span-3" : "col-span-1"}`}
+              className={`gap-2 m-3 p-3 rounded-sm bg-gray-600 ${
+                displayDate ? "col-span-5" : "col-span-1"
+              }`}
             >
               {displayDate && (
                 <>
@@ -43,12 +45,16 @@ export const PageCalender = () => {
               {appointment.appointments
                 .sort((a, b) => dayjs(a.startTime).diff(dayjs(b.startTime)))
                 .map((app) => (
-                  <div key={app._id}>
-                    <p>
-                      {app.startTime} - {app.endTime}
-                    </p>
-                    <p>{app.title}</p>
-                    <p>{app.description}</p>
+                  <div key={app._id} className="flex gap-2">
+                    <div className="flex-none">
+                      <p>{app.startTime}</p>
+                      <p className="text-center"> - </p>
+                      <p>{app.endTime}</p>
+                    </div>
+                    <div className="flex-1">
+                      <p className="font-bold">{app.title}</p>
+                      <p>{app.description}</p>
+                    </div>
                   </div>
                 ))}
             </div>
