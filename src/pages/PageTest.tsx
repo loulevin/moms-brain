@@ -11,19 +11,13 @@ import { z } from "zod";
 
 import { useState } from "react";
 
-const formSchema = z.object({
-  is_buiness: z.boolean().default(false)
-})
-
 export const PageTest = () => {
   const [isDialogOpen, setDialogOpen] = useState(false);
-  const [ ...form ] 
 
   const openDialog = () => {
     setDialogOpen(true);
   };
-}
-  
+
   const closeDialog = () => {
     setDialogOpen(false);
   };
@@ -33,10 +27,10 @@ export const PageTest = () => {
       <Button variant="outline" onClick={openDialog}>
         Test
       </Button>{" "}
-      <Form {...form} >
+      <Form>
         <Dialog open={isDialogOpen}>
           <DialogContent onClick={closeDialog}>
-            <form onSubmit></form>
+            
             <DialogHeader>
               <DialogTitle>TestForm</DialogTitle>
               <DialogDescription>
