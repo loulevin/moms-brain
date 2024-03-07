@@ -1,3 +1,5 @@
+'use client'
+
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -6,13 +8,26 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Form } from "@/components/ui/form";
-import { z } from "zod";
 
 import { useState } from "react";
 
+import { Form } from "@/components/ui/form";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+const FormSchema = z.object({
+  username: z.string().min(2, {
+    message: "Username must be at least 2 characters."
+  })
+})
+
 export const PageTest = () => {
   const [isDialogOpen, setDialogOpen] = useState(false);
+
+  const form = useForm<z.infer<typeof FormSchema>>({
+    resolver: zodResolver(FormSchema),
+  });
 
   const openDialog = () => {
     setDialogOpen(true);
@@ -27,7 +42,7 @@ export const PageTest = () => {
       <Button variant="outline" onClick={openDialog}>
         Test
       </Button>{" "}
-      <Form>
+      <Form {...form}>
         <Dialog open={isDialogOpen}>
           <DialogContent onClick={closeDialog}>
             
