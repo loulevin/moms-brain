@@ -4,10 +4,11 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Form } from "@/components/ui/form";
+
 import { useState } from "react";
 
 export const PageCalender = () => {
@@ -37,8 +38,11 @@ export const PageCalender = () => {
           <DialogHeader>
             <DialogTitle><p className="text-2xl">New Appointment</p></DialogTitle>
             <DialogDescription>
-           
+            Form in progess
             </DialogDescription>
+            <DialogFooter>
+              
+            </DialogFooter>
           </DialogHeader>
          
         </DialogContent>
