@@ -4,9 +4,11 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+
 import { useState } from "react";
 
 export const PageCalender = () => {
@@ -32,15 +34,17 @@ export const PageCalender = () => {
       <CalenderCard />
 
       <Dialog open={istDialogOpen}>
+    
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>New Appointment</DialogTitle>
+            <DialogTitle>Are you absolutely sure?</DialogTitle>
             <DialogDescription>
-              This action cannot be undone. This will permanently delete your
-              account and remove your data from our servers.
+            Form in progess
             </DialogDescription>
+            <DialogFooter>
+              
+            </DialogFooter>
           </DialogHeader>
-          <Button onClick={closeDialog}>Close</Button>
         </DialogContent>
       </Dialog>
     </>

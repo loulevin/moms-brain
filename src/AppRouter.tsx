@@ -4,6 +4,7 @@ import { PageHome } from "./pages/PageHome";
 import { Page404 } from "./pages/Page404";
 import { PageCalender } from "./pages/PageCalender";
 import { PageTabs } from "./pages/PageTabs";
+import { PageTest } from "./pages/PageTest";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/tabs",
         element: <PageTabs />,
+      },
+      {
+        path: "/test",
+        element: <PageTest />
       }
     ],
   },
