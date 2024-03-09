@@ -35,7 +35,7 @@ export const PageCalender = () => {
 
       <Dialog open={istDialogOpen}>
     
-        <DialogContent>
+        <DialogContent onClick={closeDialog}>
           <DialogHeader>
             <DialogTitle>Are you absolutely sure?</DialogTitle>
             <DialogDescription>
