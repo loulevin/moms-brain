@@ -9,7 +9,7 @@ export const Nav = () => {
           Calender
         </NavLink>
         <NavLink to="/tabs" className="[&.active]:text-gray-600">Tabs</NavLink>
-        <NavLink to="/test" className="[&.active]:text-gray-600">Test</NavLink>
+        
       </div>
     </nav>
   );
